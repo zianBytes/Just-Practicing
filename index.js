@@ -62,8 +62,6 @@ let result = "";
 
 if(computerChoice === "rock"){
     result = "It's a tie!";
-    playerScore++;
-    computerScore++;
     ties++;
     alert("You chose Rock, Computer Chose Rock. It's a tie!");
 }
@@ -115,8 +113,6 @@ document.getElementById("paper").addEventListener("click", function(){
     }
     else if(computerChoice === "paper"){
         result = "It's a tie!";
-        playerScore++;
-        computerScore++;
         ties++;
         alert("You chose Paper, Computer Chose Paper. It's a tie!");
     }
@@ -165,8 +161,6 @@ document.getElementById("scissors").addEventListener("click", function(){
     }
     else if(computerChoice === "scissors"){
         result = "It's a tie!";
-        playerScore++;
-        computerScore++;
         ties++;
         alert("You chose Scissors, Computer Chose Scissors. It's a tie!");
     }
