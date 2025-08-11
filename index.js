@@ -33,12 +33,13 @@
 
 // Rock Papers Scissors Game
 
+// Initialize scores:
 
     let playerScore = 0;
     let computerScore = 0;
     let ties = 0;
 
-    const randomNumber = Math.random();
+// Event listener for Rock button
 
 document.getElementById("rock").addEventListener("click", function(){
 
@@ -83,7 +84,112 @@ document.getElementById("losses").innerText = "Computer Score: " + computerScore
 document.getElementById("ties").innerText = "Ties: " + ties;
 
 
+
+
 console.log(result);
+})
+
+// Event Listener for paper button:
+document.getElementById("paper").addEventListener("click", function(){
+    let randomNumber = Math.random();
+    let computerChoice = "";
+
+    if (randomNumber <1/3){
+        computerChoice = "rock";
+    }
+    else if (randomNumber <2/3){
+        computerChoice = "paper";
+    }
+    else if (randomNumber < 1) {
+        computerChoice = "scissors";
+    }
+
+    console.log("Computer Chose: " + computerChoice);
+
+    let result = "";
+
+    if(computerChoice === "rock"){
+        result = "You win!";
+        playerScore++;
+        alert("You chose Paper, Computer Chose Rock. You win!");
+    }
+    else if(computerChoice === "paper"){
+        result = "It's a tie!";
+        playerScore++;
+        computerScore++;
+        ties++;
+        alert("You chose Paper, Computer Chose Paper. It's a tie!");
+    }
+    else if(computerChoice === "scissors"){
+        result = "You lose!";
+        computerScore++;
+        alert("You chose Paper, Computer Chose Scissors. You lose!");
+    }
+
+    // Update scores
+    document.getElementById("wins").innerText = "Your Score: " + playerScore;
+    document.getElementById("losses").innerText = "Computer Score: " + computerScore;
+    document.getElementById("ties").innerText = "Ties: " + ties;
+
+    console.log(result);
+});
+
+// Event Listener for Scissors button:
+document.getElementById("scissors").addEventListener("click", function(){
+    let randomNumber = Math.random();
+    let computerChoice = "";
+
+    if (randomNumber <1/3){
+        computerChoice = "rock";
+    }
+    else if (randomNumber <2/3){
+        computerChoice = "paper";
+    }
+    else if (randomNumber < 1) {
+        computerChoice = "scissors";
+    }
+
+    console.log("Computer Chose: " + computerChoice);
+
+    let result = "";
+
+    if(computerChoice === "rock"){
+        result = "You lose!";
+        computerScore++;
+        alert("You chose Scissors, Computer Chose Rock. You lose!");
+    }
+    else if(computerChoice === "paper"){
+        result = "You win!";
+        playerScore++;
+        alert("You chose Scissors, Computer Chose Paper. You win!");
+    }
+    else if(computerChoice === "scissors"){
+        result = "It's a tie!";
+        playerScore++;
+        computerScore++;
+        ties++;
+        alert("You chose Scissors, Computer Chose Scissors. It's a tie!");
+    }
+
+    // Update scores
+    document.getElementById("wins").innerText = "Your Score: " + playerScore;
+    document.getElementById("losses").innerText = "Computer Score: " + computerScore;
+    document.getElementById("ties").innerText = "Ties: " + ties;
+
+    console.log(result);
+});
+
+// To Reset the game:
+document.getElementById("reset").addEventListener("click", function(){
+    playerScore = 0;
+    computerScore = 0;
+    ties = 0;
+
+    console.log("Game has been reset!");
+    
+    document.getElementById("wins").innerText = "Your Score: " + playerScore;
+    document.getElementById("losses").innerText = "Computer Score: " + computerScore;
+    document.getElementById("ties").innerText = "Ties: " + ties;
 })
 
 
